@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.sideBar-typo{
+  color: RGBA(182,187,196,0.7);
+}
+.active{
+  border-right: 0.5rem inset #fff !important;
+}
+.active div h6 {
+  color: #FFFBF5 !important;
+}
+.active div svg * {
+  fill: #FFFBF5 !important;
+}
