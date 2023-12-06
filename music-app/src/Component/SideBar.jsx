@@ -74,23 +74,27 @@ function SideBar({children}) {
     }
   ]
   return (
-      <Container>
+      <Container sx={{padding:"1rem"}}>
         <Grid container>
           <Grid item md={3}
                 sx={{
                   paddingBottom: "2rem",
-                  marginBottom: "2rem"
+                  marginBottom: "2rem",
+                  borderRadius:"1rem",
+                  boxShadow:" 4px 10px 40px 0px rgba(255,251,245,0.05);"
+
                 }}>
             <Stack direction="column" spacing={2} alignItems="center" justifyItems='center'>
               <Stack sx={{
                 padding: "8px",
                 borderBottom: "1px solid #D0E0D2",
                 paddingBottom: "2rem", marginBottom: "2rem",
+                paddingLeft:"1rem",
                 width: "100%",
               }} direction="row" spacing={2} alignItems="center">
                 <Avatar src="https://promptsideas.b-cdn.net/prompts/279/wvJSVQrN1s5FBHDKfRnc.png"
                         sx={{width: 72, height: 72}}/>
-                <Stack flexDirection="column">
+                <Stack flexDirection="column" >
                   <Typography variant="h6" sx={{fontWeight: "bold"}}>Ava Max</Typography>
                   <Typography
                       variant='p'
@@ -106,7 +110,7 @@ function SideBar({children}) {
                   </Typography>
                 </Stack>
               </Stack>
-              <Stack sx={{width: "100%"}} direction="column">
+              <Stack sx={{width: "100%", paddingLeft:"1rem",}} direction="column">
                 <Typography variant="h6" sx={{fontWeight: "bold"}}>Library</Typography>
                 <Stack sx={{width: "100%", paddingY: "1rem", marginBottom: "2rem"}} direction='column'
                        spacing={3}>
@@ -161,7 +165,7 @@ function SideBar({children}) {
               <ModeToggle/>
             </Stack>
           </Grid>
-          <Grid item xs={9} sx={{padding:"1rem", height:"100%"}}>{children}
+          <Grid item xs={9} sx={{ height:"100%", paddingX:"1rem"}}>{children}
           </Grid>
         </Grid>
       </Container>

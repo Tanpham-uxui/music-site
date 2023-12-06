@@ -9,7 +9,7 @@ import {Box, Stack} from "@mui/material";
 
 function MusicCarousel({style}) {
   return(
-      <>
+      <Stack sx={{height:"30%"}}>
           <Swiper
               spaceBetween={30}
               effect={'fade'}
@@ -42,7 +42,7 @@ function MusicCarousel({style}) {
               <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
             </SwiperSlide>
           </Swiper>
-      </>
+      </Stack>
   )
 }
 export default MusicCarousel;

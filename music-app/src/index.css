@@ -1,6 +1,3 @@
-html{
-  height: 100%;
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,13 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-}
-#root{
-  height: 100%;
-}
-.App{
-  height: 100%;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -34,19 +24,21 @@ code {
 }
 .swiper {
   width: 100%;
-  height: 30%;
+  height: 15rem;
   border-radius: 10px;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
+  height: 70%;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  object-fit: cover;
+  height: auto;
+
 }
 input::file-selector-button {
   display: none;
@@ -57,7 +49,7 @@ input::file-selector-button {
   border-radius: 3px;
 }
 #fileAudio{
-  display: none;
+  display: block;
 }
 #fileImage{
   display: none;

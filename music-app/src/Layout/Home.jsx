@@ -4,7 +4,7 @@ import TrackList from "../Component/TrackList";
 
 const Home = () => (
     <>
-      <MusicCarousel style={{marginBottom: "2rem"}}/>
+      <MusicCarousel/>
       <TrackList/>
     </>
 )
