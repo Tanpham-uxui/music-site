@@ -1,10 +1,11 @@
 import React from "react";
-import SideBar from "../Component/SideBar";
+import MusicCarousel from "../Component/MusicCarousel";
+import TrackList from "../Component/TrackList";
 
 const Home = () => (
     <>
-        <h1>home</h1>
+      <MusicCarousel style={{marginBottom: "2rem"}}/>
+      <TrackList/>
     </>
-
 )
 export default Home

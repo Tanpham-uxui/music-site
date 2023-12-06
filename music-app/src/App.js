@@ -1,19 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import SideBar from "./Component/SideBar";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {Route, Routes} from "react-router-dom";
 import Home from "./Layout/Home";
 import Songs from "./Layout/Songs";
-const darkTheme = createTheme({
-  palette:{
-    mode:'dark'
-  },
-})
+import Admin from "./Layout/Admin";
+import {
+  experimental_extendTheme as materialExtendTheme,
+  Experimental_CssVarsProvider as MaterialCssVarsProvider,
+  THEME_ID as MATERIAL_THEME_ID,
+} from '@mui/material/styles';
+import { CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
+const materialTheme = materialExtendTheme();
 function App() {
   return (
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline/>
+      <MaterialCssVarsProvider theme={{ [MATERIAL_THEME_ID]: materialTheme }}>
+        <JoyCssVarsProvider>
+        <CssBaseline enableColorScheme/>
         <div className="App">
           <SideBar>
             <Routes>
@@ -24,11 +27,12 @@ function App() {
               <Route path='/artists'/>
               <Route path='/liked'/>
               <Route path='/playlists'/>
+              <Route path='/admin' element={<Admin/>}/>
             </Routes>
           </SideBar>
         </div>
-      </ThemeProvider>
-
+        </JoyCssVarsProvider>
+      </MaterialCssVarsProvider>
   );
 }
 
