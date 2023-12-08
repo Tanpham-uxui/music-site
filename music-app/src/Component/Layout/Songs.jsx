@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../Component/SideBar";
+import SideBar from "../SideBar";
 
 const Songs = () => (
       <h1>Songs</h1>

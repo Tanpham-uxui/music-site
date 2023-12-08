@@ -1,6 +1,6 @@
 import React from "react";
-import MusicCarousel from "../Component/MusicCarousel";
-import TrackList from "../Component/TrackList";
+import MusicCarousel from "../MusicCarousel";
+import TrackList from "../TrackList";
 
 const Home = () => (
     <>

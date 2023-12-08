@@ -11,7 +11,7 @@ import {
   PodcastsIcon,
   RadioIcon,
   SongsIcon
-} from "../Icon/MusicLogo";
+} from "./Icon/MusicLogo";
 import {NavLink, Link} from "react-router-dom";
 import ModeToggle from "./ModeToggle";
 

@@ -2,9 +2,9 @@ import './App.css';
 import SideBar from "./Component/SideBar";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {Route, Routes} from "react-router-dom";
-import Home from "./Layout/Home";
-import Songs from "./Layout/Songs";
-import Admin from "./Layout/Admin";
+import Home from "./Component/Layout/Home";
+import Songs from "./Component/Layout/Songs";
+import Admin from "./Component/Layout/Admin";
 import {
   experimental_extendTheme as materialExtendTheme,
   Experimental_CssVarsProvider as MaterialCssVarsProvider,

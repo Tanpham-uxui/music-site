@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {Box, Typography} from "@mui/material";
 import {Divider, Button, FormControl, FormLabel, Input, Stack} from "@mui/joy";
-import thumbnailExample from '../../src/asset/image/thumbnail-example.jpg'
+import thumbnailExample from '../../asset/image/thumbnail-example.jpg'
 import {Details} from "@mui/icons-material";
 import FileService from "../services/fileService";
-import useFetch from "../Hook/useFetch";
-import SongList from "../Component/SongList";
+import useFetch from "../../Hook/useFetch";
+import SongList from "../SongList";
 
 function Admin() {
   const [state, setState] = useState({
