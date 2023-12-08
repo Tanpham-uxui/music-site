@@ -1,15 +1,17 @@
 import {useReducer} from "react";
 
 export const initState = {
-  musicList: [
-
-  ],
+  musicList: [],
   filter: []
 }
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "value":
+    case 'musicList/fetchData':
+      return {
+        ...state,
+        musicList: action.payload
+      }
       break
     default:
       break;
