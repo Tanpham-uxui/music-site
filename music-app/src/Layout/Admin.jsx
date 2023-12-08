@@ -4,15 +4,15 @@ import {Divider, Button, FormControl, FormLabel, Input, Stack} from "@mui/joy";
 import thumbnailExample from '../../src/asset/image/thumbnail-example.jpg'
 import {Details} from "@mui/icons-material";
 import FileService from "../services/fileService";
+import useFetch from "../Hook/useFetch";
+import SongList from "../Component/SongList";
 
 function Admin() {
-
   const [state, setState] = useState({
     tempThumbnail: "",
     audio: {},
     thumbnail: {}
   })
-
   const handleSelectThumbnail = (e) => {
     const tempThumbnail = URL.createObjectURL(e.target.files[0])
     setState({
@@ -31,8 +31,6 @@ function Admin() {
   const handleUploadInformation = async () => {
     let uploadImage = await FileService.uploadImage(thumbnail)
     let uploadAudio = await FileService.uploadAudio(audio);
-    console.log(uploadImage)
-    console.log(uploadAudio)
   }
   return (
       <>
@@ -48,6 +46,10 @@ function Admin() {
             <FormControl>
               <FormLabel>Artist Name</FormLabel>
               <Input placeholder="Artist Name"/>
+            </FormControl>
+            <FormControl>
+              <FormLabel>Musician</FormLabel>
+              <Input placeholder="Musician Name"/>
             </FormControl>
             <FormControl>
               <FormLabel>Album Name</FormLabel>
@@ -75,12 +77,12 @@ function Admin() {
         <Stack sx={{marginTop: "1rem"}}>
           <Button type="button" onClick={handleUploadInformation}>Upload</Button>
         </Stack>
-        <Divider sx={{marginTop: "1rem"}}>
+        <Divider sx={{margin: "1rem"}}>
           <Typography variant="h6">Music List</Typography>
         </Divider>
+        <SongList/>
       </>
   )
 }
-
 export default Admin
 
