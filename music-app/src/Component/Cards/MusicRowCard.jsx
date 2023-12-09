@@ -2,7 +2,6 @@ import React from "react";
 import {Avatar, Typography} from "@mui/material";
 import {Button} from "@mui/joy";
 import {Play} from "../Icon/MusicLogo";
-import PlaySong from "../PlaySong";
 
 function MusicRowCard({song}){
   const handlePlaySong = () => {

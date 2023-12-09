@@ -12,7 +12,7 @@ import {
   RadioIcon,
   SongsIcon
 } from "./Icon/MusicLogo";
-import {NavLink, Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import ModeToggle from "./ModeToggle";
 
 function SideBar({children}) {

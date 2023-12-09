@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import {Box, Typography} from "@mui/material";
 import {Divider, Button, FormControl, FormLabel, Input, Stack} from "@mui/joy";
 import thumbnailExample from '../../asset/image/thumbnail-example.jpg'
-import {Details} from "@mui/icons-material";
 import FileService from "../services/fileService";
-import useFetch from "../../Hook/useFetch";
 import SongList from "../SongList";
+import {useDispatch} from "react-redux";
+import {setSearchText} from "../../reducer/actions";
 
 function Admin() {
   const [state, setState] = useState({
@@ -28,6 +28,7 @@ function Admin() {
     })
   }
   const {tempThumbnail, thumbnail, audio} = state
+  const dispatch = useDispatch()
   const handleUploadInformation = async () => {
     let uploadImage = await FileService.uploadImage(thumbnail)
     let uploadAudio = await FileService.uploadAudio(audio);
@@ -80,6 +81,10 @@ function Admin() {
         <Divider sx={{margin: "1rem"}}>
           <Typography variant="h6">Music List</Typography>
         </Divider>
+        <FormControl sx={{margin: "1rem"}}>
+          <FormLabel>Search Song</FormLabel>
+          <Input onInput={(e) => dispatch(setSearchText(e.target.value))} placeholder="Search Song"/>
+        </FormControl>
         <SongList/>
       </>
   )
