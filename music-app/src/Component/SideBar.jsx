@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Avatar, Button, Container, Grid, Stack, Typography} from "@mui/material";
 import "@fontsource/montserrat";
 import "@fontsource/montserrat/400.css";
@@ -14,9 +14,9 @@ import {
 } from "./Icon/MusicLogo";
 import {NavLink} from "react-router-dom";
 import ModeToggle from "./ModeToggle";
+import BottomMusicPlayer from "./BottomMusicPlayer";
 
 function SideBar({children}) {
-  // const [showFullSideBar,setShowFullSideBar] = useState(false)
   const libraryElements = [
     {
       "elementIcon": <HomeIcon fill="RGBA(182,187,196,0.7)"/>,
@@ -75,6 +75,7 @@ function SideBar({children}) {
   ]
   return (
       <Container>
+        <BottomMusicPlayer/>
         <Grid container>
           <Grid item md={3}
                 sx={{
@@ -167,6 +168,7 @@ function SideBar({children}) {
           <Grid item xs={9} sx={{height: "100%", paddingX: "1rem"}}>{children}
           </Grid>
         </Grid>
+
       </Container>
   )
 }

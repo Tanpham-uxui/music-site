@@ -11,7 +11,6 @@ function TrackList(){
             <Typography variant="h5" sx={{fontWeight: "bold"}}>Tracks For You</Typography>
             <Stack direction="column">
             <Stack direction="row">
-              
             </Stack>
             </Stack>
           </Stack>

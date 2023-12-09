@@ -1,35 +1,21 @@
-import React, {useEffect, useState} from "react";
-import {Button, IconButton, Table} from '@mui/joy'
+import React, {useEffect} from "react";
+import {Table} from '@mui/joy'
 import MusicRowCard from "./Cards/MusicRowCard";
-import {useDispatch, useSelector} from "react-redux";
 import {Box} from "@mui/material";
-import {getMusicList} from "../reducer/actions";
+import {useDispatch, useSelector} from "react-redux";
+import {leftOverMusics} from "../redux-toolkit/selectors";
+import musicsSlice, {fetchMusicThunkAction} from "../slices/musicsSlice";
 
 
 function SongList() {
-
-  // const songData = useFetch("https://jsonserver-tanuxuis-projects.vercel.app/Songs")
-  const musicList = useSelector((data) => data.musicList)
-  const {searchText} = useSelector((data) => data.filters)
+  const remainMusicList = useSelector(leftOverMusics)
   const dispatch = useDispatch()
   useEffect(() => {
-    async function getMusic() {
-      let musicRest = await fetch('https://jsonserver-tanuxuis-projects.vercel.app/Songs')
-      let data = await musicRest.json()
-      dispatch(getMusicList(data))
+    async function getMusicList(){
+      dispatch(fetchMusicThunkAction())
     }
-
-    getMusic()
-  }, [])
-  const queryMusicList = () => {
-    let queryMusic = [...musicList]
-    if (searchText) {
-      queryMusic = queryMusic.filter((m) => m.songName.toLowerCase().includes(searchText.toLowerCase()))
-    }
-    return queryMusic
-
-  }
-  const remainMusicList = queryMusicList()
+    getMusicList()
+  }, []);
   return (
       <Box>
         <Table hoverRow>

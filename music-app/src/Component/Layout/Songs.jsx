@@ -1,8 +1,9 @@
 import React from "react";
-import SideBar from "../SideBar";
 
-const Songs = () => (
-      <h1>Songs</h1>
+function Songs(){
+  return(
+      <></>
+  )
+}
 
-)
 export default Songs

@@ -5,8 +5,16 @@ import thumbnailExample from '../../asset/image/thumbnail-example.jpg'
 import FileService from "../services/fileService";
 import SongList from "../SongList";
 import {useDispatch} from "react-redux";
-import {setSearchText} from "../../reducer/actions";
-
+import filtersSlice from "../../slices/filtersSlice";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+const schema = yup.object({
+  songName: yup.string().required(),
+  artist: yup.string().required(),
+  album: yup.string().required(),
+  musician: yup.string().required(),
+}).required();
 function Admin() {
   const [state, setState] = useState({
     tempThumbnail: "",
@@ -28,11 +36,14 @@ function Admin() {
     })
   }
   const {tempThumbnail, thumbnail, audio} = state
-  const dispatch = useDispatch()
   const handleUploadInformation = async () => {
     let uploadImage = await FileService.uploadImage(thumbnail)
     let uploadAudio = await FileService.uploadAudio(audio);
   }
+  const dispatch = useDispatch()
+  const {register, handleSubmit, reset, formState:{errors}} = useForm({
+    resolver:yupResolver(schema)
+  })
   return (
       <>
         <Divider>
@@ -81,9 +92,9 @@ function Admin() {
         <Divider sx={{margin: "1rem"}}>
           <Typography variant="h6">Music List</Typography>
         </Divider>
-        <FormControl sx={{margin: "1rem"}}>
+        <FormControl sx={{marginY: "1rem"}}>
           <FormLabel>Search Song</FormLabel>
-          <Input onInput={(e) => dispatch(setSearchText(e.target.value))} placeholder="Search Song"/>
+          <Input onInput={(e)=>dispatch(filtersSlice.actions.setSearchText(e.target.value))} placeholder="Search Song"/>
         </FormControl>
         <SongList/>
       </>

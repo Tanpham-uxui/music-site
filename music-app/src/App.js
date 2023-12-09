@@ -2,23 +2,25 @@ import './App.css';
 import SideBar from "./Component/SideBar";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {Route, Routes} from "react-router-dom";
-import Home from "./Component/Layout/Home";
-import Songs from "./Component/Layout/Songs";
-import Admin from "./Component/Layout/Admin";
 import {
   experimental_extendTheme as materialExtendTheme,
   Experimental_CssVarsProvider as MaterialCssVarsProvider,
   THEME_ID as MATERIAL_THEME_ID,
 } from '@mui/material/styles';
 import { CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
+import Admin from "./Component/Layout/Admin";
+import Home from "./Component/Layout/Home";
+import Songs from "./Component/Layout/Songs";
+import BottomMusicPlayer from "./Component/BottomMusicPlayer";
 const materialTheme = materialExtendTheme();
 function App() {
   return (
       <MaterialCssVarsProvider theme={{ [MATERIAL_THEME_ID]: materialTheme }}>
         <JoyCssVarsProvider>
         <CssBaseline enableColorScheme/>
-        <div className="App">
-          <SideBar>
+        <div className="App" >
+
+            <SideBar>
             <Routes>
               <Route path='/'/>
               <Route path='/home' element={<Home/>}/>
@@ -29,7 +31,7 @@ function App() {
               <Route path='/playlists'/>
               <Route path='/admin' element={<Admin/>}/>
             </Routes>
-          </SideBar>
+            </SideBar>
         </div>
         </JoyCssVarsProvider>
       </MaterialCssVarsProvider>
