@@ -4,7 +4,7 @@ import MusicRowCard from "./Cards/MusicRowCard";
 import {Box} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {leftOverMusics} from "../redux-toolkit/selectors";
-import musicsSlice, {fetchMusicThunkAction} from "../slices/musicsSlice";
+import {fetchMusicThunkAction} from "../slices/musicsSlice";
 
 
 function SongList() {

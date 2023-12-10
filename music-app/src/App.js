@@ -1,6 +1,6 @@
 import './App.css';
 import SideBar from "./Component/SideBar";
-import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import {CssBaseline} from "@mui/material";
 import {Route, Routes} from "react-router-dom";
 import {
   experimental_extendTheme as materialExtendTheme,
@@ -11,7 +11,6 @@ import { CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
 import Admin from "./Component/Layout/Admin";
 import Home from "./Component/Layout/Home";
 import Songs from "./Component/Layout/Songs";
-import BottomMusicPlayer from "./Component/BottomMusicPlayer";
 const materialTheme = materialExtendTheme();
 function App() {
   return (

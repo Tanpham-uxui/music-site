@@ -5,7 +5,7 @@ import {Stack} from "@mui/joy";
 function bottomMusicPlayer() {
     return (
         <Stack sx={{position:"fixed", bottom: 0}} direction="row" justifyContent="center">
-            <audio controls autoPlay src={}></audio>
+            <audio controls autoPlay></audio>
         </Stack>
     )
 }
