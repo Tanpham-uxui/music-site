@@ -15,8 +15,9 @@ import {
 import {NavLink} from "react-router-dom";
 import ModeToggle from "./ModeToggle";
 import BottomMusicPlayer from "./BottomMusicPlayer";
-
+import {useSelector} from "react-redux";
 function SideBar({children}) {
+  const openBottonPlayer = useSelector((state)=>state.mediaReducer.audioDetails)
   const libraryElements = [
     {
       "elementIcon": <HomeIcon fill="RGBA(182,187,196,0.7)"/>,
@@ -74,8 +75,9 @@ function SideBar({children}) {
     }
   ]
   return (
-      <Container>
-        <BottomMusicPlayer/>
+      <>
+      {openBottonPlayer.id && <BottomMusicPlayer/>}
+      <Container sx={{marginBottom:"5rem"}}>
         <Grid container>
           <Grid item md={3}
                 sx={{
@@ -168,9 +170,8 @@ function SideBar({children}) {
           <Grid item xs={9} sx={{height: "100%", paddingX: "1rem"}}>{children}
           </Grid>
         </Grid>
-
       </Container>
+      </>
   )
 }
-
 export default SideBar

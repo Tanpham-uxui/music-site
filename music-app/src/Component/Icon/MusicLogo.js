@@ -79,7 +79,7 @@ export const Mute = ({fill, width, height}) => {
 export const Pause = ({fill, width, height}) => {
   return (
       <svg xmlns="http://www.w3.org/2000/svg" width={`${width ? width : 24}`} height={`${height ? height : 24}`}
-           viewBox={`0 0 ${width} ${height}`}> fill="none">
+           viewBox={`0 0 24 24`}> fill="none">
         <rect x="4" y="3" width="6" height="18" rx="2" fill={fill ? fill : "#FFFBF5"}/>
         <rect x="14" y="3" width="6" height="18" rx="2" fill={fill ? fill : "#FFFBF5"}/>
       </svg>
@@ -88,26 +88,26 @@ export const Pause = ({fill, width, height}) => {
 export const Play = ({fill, width, height}) => {
   return (
       <svg xmlns="http://www.w3.org/2000/svg" width={`${width ? width : 24}`} height={`${height ? height : 24}`}
-           viewBox={`0 0 ${width} ${height}`}> fill="none">
+           viewBox={`0 0 24 24`}> fill="none">
         <path
             d="M19.6432 12.848C20.2699 12.4564 20.2699 11.5437 19.6432 11.152L6.53 2.95627C5.86395 2.53999 5 3.01884 5 3.80427V20.1958C5 20.9812 5.86395 21.4601 6.53 21.0438L19.6432 12.848Z"
             fill={fill ? fill : "#FFFBF5"}/>
       </svg>
   )
 }
-export const Repeat = ({fill, width, height}) => {
+export const Repeat = ({fill, width, height,booleanProp}) => {
   return (
-      <svg xmlns="http://www.w3.org/2000/svg" width={`${width ? width : 24}`} height={`${height ? height : 24}`}
-           viewBox={`0 0 ${width} ${height}`}> fill="none">
+      <svg className={ booleanProp ? 'animate__rotateIn' :'animate__rotateIn'} xmlns="http://www.w3.org/2000/svg" width={`${width ? width : 24}`} height={`${height ? height : 24}`}
+           viewBox={`0 0 24 24`}> fill="none" >
         <path
             d="M21.6432 6.04388C22.2699 5.65222 22.2699 4.73956 21.6432 4.34789L16.53 1.15214C15.864 0.735855 15 1.2147 15 2.00013V8.39164C15 9.17707 15.864 9.65592 16.53 9.23964L21.6432 6.04388Z"
             fill={fill ? fill : "#FFFBF5"}/>
         <path
             d="M2.47014 19.0439C1.84347 18.6522 1.84347 17.7396 2.47014 17.3479L7.58334 14.1521C8.24939 13.7359 9.11334 14.2147 9.11334 15.0001V21.3916C9.11334 22.1771 8.24939 22.6559 7.58334 22.2396L2.47014 19.0439Z"
             fill={fill ? fill : "#FFFBF5"}/>
-        <path d="M4 11V11C4 7.68629 6.68629 5 10 5V5H15" stroke="white" strokeWidth="2" strokeLinecap="round"
-              strokeLinejoin="round"/>
-        <path d="M19 12V12C19 15.3137 16.3137 18 13 18V18H8" stroke="white" strokeWidth="2" strokeLinecap="round"
+        <path d="M4 11V11C4 7.68629 6.68629 5 10 5V5H15" stroke={fill ? fill : "#FFFBF5"} strokeWidth="2" strokeLinecap="round"
+              strokeLinejoin="round" />
+        <path d="M19 12V12C19 15.3137 16.3137 18 13 18V18H8" stroke={fill ? fill : "#FFFBF5"} strokeWidth="2" strokeLinecap="round"
               strokeLinejoin="round"/>
       </svg>
   )

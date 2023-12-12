@@ -11,6 +11,8 @@ import { CssVarsProvider as JoyCssVarsProvider } from '@mui/joy/styles';
 import Admin from "./Component/Layout/Admin";
 import Home from "./Component/Layout/Home";
 import Songs from "./Component/Layout/Songs";
+import BottomMusicPlayer from "./Component/BottomMusicPlayer";
+import React from "react";
 const materialTheme = materialExtendTheme();
 function App() {
   return (
@@ -18,10 +20,9 @@ function App() {
         <JoyCssVarsProvider>
         <CssBaseline enableColorScheme/>
         <div className="App" >
-
             <SideBar>
             <Routes>
-              <Route path='/'/>
+              <Route path='/' element={<Home/>}/>
               <Route path='/home' element={<Home/>}/>
               <Route path='/songs' element={<Songs/>}/>
               <Route path='/albums'/>

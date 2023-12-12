@@ -54,3 +54,18 @@ input::file-selector-button {
 #fileImage{
   display: none;
 }
+.blur-bg:before {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  filter: blur(300px);
+  background: inherit;
+  overflow: hidden;
+  backdrop-filter: blur(80px);
+}
+
+.img-bottom{
+  height: 4rem;
+  width: 4rem;
+  object-fit: contain;
+  border-radius: 1rem;
+  border:  0.2rem inset #FFFBF5;
+}
